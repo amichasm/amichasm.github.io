@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amy | Computer Science · Harvard College</title>
+  <meta name="description" content="Portfolio of Amy, a Computer Science student at Harvard College with a secondary in Economics: projects, design work, and experience." />
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <!-- ========== NAV ========== -->
+  <header class="nav">
+    <a href="#top" class="logo">Amy<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#social">Social</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- The pink "story thread" that draws itself down the left side as you scroll -->
+    <svg class="story-thread" aria-hidden="true">
+      <path class="thread-track" />
+      <path class="thread-line" />
+      <circle class="thread-dot" r="6" />
+    </svg>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <svg class="sparkles" aria-hidden="true"></svg>
+
+      <div class="hero-copy">
+        <p class="eyebrow floaty">Computer Science · Harvard College</p>
+        <h1 class="hero-title" aria-label="Hi, I'm Amy.">Hi, I'm <em>Amy</em>.</h1>
+        <p class="tagline" data-reveal="up">
+          I study Computer Science with a secondary in Economics at Harvard College, and I design the
+          visuals that help student organizations share their stories.
+        </p>
+        <div class="hero-actions" data-reveal="up">
+          <a href="#about" class="btn btn-primary">Start the story</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <svg class="blob" viewBox="-250 -250 500 500" aria-hidden="true">
+          <defs>
+            <linearGradient id="blobGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#fde2ec" />
+              <stop offset="55%" stop-color="#f9c6d9" />
+              <stop offset="100%" stop-color="#eec4ec" />
+            </linearGradient>
+          </defs>
+          <path class="blob-path" fill="url(#blobGrad)" />
+        </svg>
+        <div class="photo-wrap">
+          <img src="images/amy_me.png" alt="Amy smiling in a black top" class="hero-photo" />
+        </div>
+        <div class="hello-bubble" aria-hidden="true"><span>¡Hola! 👋</span></div>
+
+        <!-- Floating chips: drag them around, or click to jump to that part of the story -->
+        <button type="button" class="chip" style="left:0;top:20%" data-go="projects" data-filter="cs" aria-label="See computer science projects"><span class="chip-inner">&lt;/&gt; Computer Science</span></button>
+        <button type="button" class="chip" style="right:0;top:36%" data-go="skills" aria-label="See skills"><span class="chip-inner">📈 Economics</span></button>
+        <button type="button" class="chip" style="left:-2%;top:60%" data-go="projects" data-filter="design" aria-label="See design projects"><span class="chip-inner">🎨 Design</span></button>
+        <button type="button" class="chip" style="right:2%;top:72%" data-go="social" aria-label="See social media work"><span class="chip-inner">📱 Social Media</span></button>
+      </div>
+
+      <a href="#about" class="scroll-cue thread-anchor"><span>Scroll to begin</span><i aria-hidden="true">↓</i></a>
+    </section>
+
+    <!-- Conversation: visitor -->
+    <div class="bridge visitor">
+      <div class="bubble-wrap" data-reveal="pop">
+        <span class="who">You</span>
+        <p class="bubble" data-type>Nice to meet you, Amy! So… who are you?</p>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 1: ABOUT ========== -->
+    <section id="about" class="section">
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 01</span> Who I am</p>
+      <h2 data-reveal="words">A computer scientist with an eye for design.</h2>
+      <div class="about-grid">
+        <div class="about-text" data-reveal="left">
+          <p>
+            I'm a Computer Science concentrator at Harvard College pursuing a secondary in Economics.
+            <!-- TODO: add a sentence on what you enjoy most in CS and Economics -->
+          </p>
+          <p>
+            Outside the classroom, I've served as Communications Director for Concilio Latino and
+            Latinas Unidas, designing graphics and Instagram content for events, initiatives, and
+            announcements. That work grew into a genuine interest in design, branding, and marketing.
+          </p>
+          <p>
+            <!-- TODO: replace with what you're looking for next -->
+            I'm currently looking for opportunities in [software engineering / data / product, etc.].
+          </p>
+        </div>
+        <ul class="facts" data-stagger>
+          <li data-reveal="pop"><strong class="count" data-to="3">3</strong><span>student leadership roles</span></li>
+          <li data-reveal="pop"><strong class="count" data-to="2">2</strong><span>org Instagram accounts led</span></li>
+          <li data-reveal="pop"><strong>CS</strong><span>concentration, with a secondary in Economics</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Conversation: Amy -->
+    <div class="bridge amy">
+      <span class="avatar thread-anchor" aria-hidden="true"></span>
+      <div class="bubble-wrap" data-reveal="pop">
+        <span class="who">Amy</span>
+        <p class="bubble" data-type>My work sits across three areas: computer science, economics, and design. Here's how they connect.</p>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 2: SKILLS ========== -->
+    <section id="skills" class="section">
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 02</span> Toolkit</p>
+      <h2 data-reveal="words">Skills across disciplines.</h2>
+      <p class="section-intro" data-reveal="up">Hover over a skill to see which areas it belongs to, or drag the bubbles to explore. Skills between two areas draw on both.</p>
+      <div class="skill-graph" id="skill-graph" data-reveal="up" role="img" aria-label="Interactive map of skills across computer science, economics, and design"></div>
+      <!-- Edit the skills list in script.js (search for "SKILLS") -->
+      <ul class="sr-only">
+        <li>Computer Science: Python, JavaScript, HTML / CSS, SQL, Git</li>
+        <li>Economics: Economic Analysis, Excel</li>
+        <li>Design &amp; Communications: Graphic Design, Canva, Figma, Instagram Content, Copywriting, Event Promotion</li>
+        <li>Computer Science and Economics: Data Analysis, Statistics</li>
+        <li>Computer Science and Design: Web Design</li>
+        <li>Economics and Design: Market Research, Marketing</li>
+      </ul>
+    </section>
+
+    <!-- Conversation: visitor -->
+    <div class="bridge visitor">
+      <div class="bubble-wrap" data-reveal="pop">
+        <span class="who">You</span>
+        <p class="bubble" data-type>Interesting. What have you built so far?</p>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 3: PROJECTS ========== -->
+    <section id="projects" class="section">
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 03</span> Things I've made</p>
+      <h2 data-reveal="words">The work, so far.</h2>
+      <div class="filters" role="group" aria-label="Filter projects" data-reveal="up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="cs">Computer Science</button>
+        <button class="filter-btn" data-filter="design">Design &amp; Marketing</button>
+      </div>
+
+      <!-- To add a project, copy one <article> and set data-category to "cs" or "design" -->
+      <div class="projects-grid" data-stagger>
+        <article class="card project" data-category="cs" data-reveal="pop">
+          <span class="badge badge-cs">Computer Science</span>
+          <h3>Software Project Title</h3>
+          <p>What you built, the problem it solves, and the tech behind it.</p>
+          <ul class="tags small"><li>Python</li><li>Flask</li></ul>
+          <a href="#" class="project-link">View on GitHub →</a>
+        </article>
+
+        <article class="card project" data-category="design" data-reveal="pop">
+          <span class="badge badge-design">Design &amp; Marketing</span>
+          <h3>Design / Campaign Project</h3>
+          <p>An event campaign or graphics series: the goal, what you designed, and the result (e.g. turnout or engagement).</p>
+          <ul class="tags small"><li>Canva</li><li>Instagram</li></ul>
+          <a href="#" class="project-link">View project →</a>
+        </article>
+
+        <article class="card project" data-category="cs" data-reveal="pop">
+          <span class="badge badge-cs">Computer Science</span>
+          <h3>Data / Web Project</h3>
+          <p>A data analysis, website, or app. Link to a live demo if you have one.</p>
+          <ul class="tags small"><li>JavaScript</li><li>SQL</li></ul>
+          <a href="#" class="project-link">Live demo →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Conversation: Amy -->
+    <div class="bridge amy">
+      <span class="avatar thread-anchor" aria-hidden="true"></span>
+      <div class="bubble-wrap" data-reveal="pop">
+        <span class="who">Amy</span>
+        <p class="bubble" data-type>Outside the classroom, I lead communications for the communities I'm part of.</p>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 4: SOCIAL MEDIA ========== -->
+    <section id="social" class="section">
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 04</span> Telling our stories</p>
+      <h2 data-reveal="words">Designing for my communities.</h2>
+      <p class="section-intro" data-reveal="up">Graphics and Instagram content I designed as Communications Director for two Harvard College student organizations.</p>
+
+      <div class="org card" data-reveal="left">
+        <div class="org-head">
+          <div>
+            <h3>Concilio Latino de Harvard College</h3>
+            <p class="org-role">Communications Director · Sept 2025 – Present</p>
+          </div>
+          <a href="https://www.instagram.com/conciliolatino/" target="_blank" rel="noopener" class="btn btn-ghost btn-small">@conciliolatino</a>
+        </div>
+        <!-- TODO: fill in real numbers once you have them (e.g. <strong class="count" data-to="250" data-prefix="+">+250</strong>) -->
+        <ul class="stats">
+          <li><strong>+—</strong><span>followers gained</span></li>
+          <li><strong>—%</strong><span>more likes per post vs. before</span></li>
+          <li><strong>—</strong><span>posts published</span></li>
+        </ul>
+        <div class="carousel" aria-label="Concilio Latino de Harvard College Instagram posts">
+          <button class="carousel-btn prev" aria-label="Previous posts">‹</button>
+          <div class="carousel-track">
+            <!-- To add an Instagram post: copy this <figure> and change only the link -->
+            <figure class="slide embed">
+              <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DdCDpHcIBO5/" data-instgrm-version="14">
+                <a href="https://www.instagram.com/p/DdCDpHcIBO5/" target="_blank" rel="noopener">View this post on Instagram</a>
+              </blockquote>
+            </figure>
+            <figure class="slide embed">
+              <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DexLXaMhIog/" data-instgrm-version="14">
+                <a href="https://www.instagram.com/p/DexLXaMhIog/" target="_blank" rel="noopener">View this post on Instagram</a>
+              </blockquote>
+            </figure>
+            <figure class="slide">
+              <div class="slide-placeholder">Post 3</div>
+              <figcaption>Caption: what this post was for (event, campaign, announcement)</figcaption>
+            </figure>
+            <figure class="slide">
+              <div class="slide-placeholder">Post 4</div>
+              <figcaption>Caption: what this post was for (event, campaign, announcement)</figcaption>
+            </figure>
+            <figure class="slide">
+              <div class="slide-placeholder">Post 5</div>
+              <figcaption>Caption: what this post was for (event, campaign, announcement)</figcaption>
+            </figure>
+          </div>
+          <button class="carousel-btn next" aria-label="Next posts">›</button>
+        </div>
+      </div>
+
+      <div class="org card" data-reveal="right">
+        <div class="org-head">
+          <div>
+            <h3>Latinas Unidas de Harvard College</h3>
+            <p class="org-role">Communications Director · Jan 2025 – Dec 2025 <span class="now-role">· Vice President, Jan – Dec 2026</span></p>
+          </div>
+          <a href="https://www.instagram.com/latinasunidasdeharvardcollege/" target="_blank" rel="noopener" class="btn btn-ghost btn-small">@latinasunidasdeharvardcollege</a>
+        </div>
+        <!-- TODO: fill in real numbers once you have them -->
+        <ul class="stats">
+          <li><strong>+—</strong><span>followers gained</span></li>
+          <li><strong>—%</strong><span>more likes per post vs. before</span></li>
+          <li><strong>—</strong><span>posts published</span></li>
+        </ul>
+        <div class="carousel" aria-label="Latinas Unidas de Harvard College Instagram posts">
+          <button class="carousel-btn prev" aria-label="Previous posts">‹</button>
+          <div class="carousel-track">
+            <figure class="slide">
+              <div class="slide-placeholder">Post 1</div>
+              <figcaption>Caption: what this post was for (event, campaign, announcement)</figcaption>
+            </figure>
+            <figure class="slide">
+              <div class="slide-placeholder">Post 2</div>
+              <figcaption>Caption: what this post was for (event, campaign, announcement)</figcaption>
+            </figure>
+            <figure class="slide">
+              <div class="slide-placeholder">Post 3</div>
+              <figcaption>Caption: what this post was for (event, campaign, announcement)</figcaption>
+            </figure>
+            <figure class="slide">
+              <div class="slide-placeholder">Post 4</div>
+              <figcaption>Caption: what this post was for (event, campaign, announcement)</figcaption>
+            </figure>
+            <figure class="slide">
+              <div class="slide-placeholder">Post 5</div>
+              <figcaption>Caption: what this post was for (event, campaign, announcement)</figcaption>
+            </figure>
+          </div>
+          <button class="carousel-btn next" aria-label="Next posts">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conversation: visitor -->
+    <div class="bridge visitor">
+      <div class="bubble-wrap" data-reveal="pop">
+        <span class="who">You</span>
+        <p class="bubble" data-type>Wow. How did you get here?</p>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 5: EXPERIENCE ========== -->
+    <section id="experience" class="section">
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 05</span> The journey</p>
+      <h2 data-reveal="words">How I got here.</h2>
+      <div class="timeline-wrap">
+        <span class="timeline-progress" aria-hidden="true"></span>
+        <ol class="timeline">
+          <li data-reveal="right">
+            <span class="when">Jan 2026 – Dec 2026</span>
+            <h3>Vice President · Latinas Unidas de Harvard College</h3>
+            <p>TODO: one line on what you lead as VP.</p>
+          </li>
+          <li data-reveal="right">
+            <span class="when">Sept 2025 – Present</span>
+            <h3>Communications Director · Concilio Latino de Harvard College</h3>
+            <p>Run the organization's Instagram (@conciliolatino). TODO: one line on your impact.</p>
+          </li>
+          <li data-reveal="right">
+            <span class="when">Jan 2025 – Dec 2025</span>
+            <h3>Communications Director · Latinas Unidas de Harvard College</h3>
+            <p>Ran the organization's Instagram (@latinasunidasdeharvardcollege). TODO: one line on your impact.</p>
+          </li>
+          <li data-reveal="right">
+            <span class="when">2023</span>
+            <h3>Role Title · Organization</h3>
+            <p>One or two lines on what you did and the impact you had.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Conversation: Amy -->
+    <div class="bridge amy">
+      <span class="avatar thread-anchor" aria-hidden="true"></span>
+      <div class="bubble-wrap" data-reveal="pop">
+        <span class="who">Amy</span>
+        <p class="bubble" data-type>Which brings us to now… and maybe to you. 💌</p>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 6: CONTACT ========== -->
+    <section id="contact" class="section contact">
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 06</span> Your turn</p>
+      <h2 data-reveal="words">Let's write the next chapter together.</h2>
+      <p data-reveal="up">Open to opportunities and collaborations. The fastest way to reach me is email.</p>
+      <div class="hero-actions" data-reveal="up">
+        <a href="mailto:you@example.com" class="btn btn-primary heart-btn">Email me</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>
+        <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Amy. Made with <span class="heart">♡</span></p>
+  </footer>
+
+  <script async src="https://www.instagram.com/embed.js"></script>
+</body>
+</html>
