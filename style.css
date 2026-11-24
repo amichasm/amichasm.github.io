@@ -314,7 +314,7 @@ main {
 
 /* Skills graph */
 .skill-graph {
-  position: relative; height: 500px; border-radius: 24px;
+  position: relative; height: 580px; border-radius: 24px;
   background:
     radial-gradient(circle at 17% 50%, rgba(241, 230, 250, .9), transparent 40%),
     radial-gradient(circle at 83% 24%, rgba(252, 232, 240, .9), transparent 38%),
@@ -348,6 +348,16 @@ main {
 .graph-hint {
   position: absolute; left: 16px; bottom: 12px; font-size: .78rem; color: var(--muted);
   background: rgba(255, 255, 255, .85); padding: 4px 10px; border-radius: 999px; pointer-events: none;
+}
+
+.certs {
+  margin-top: 20px; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+  padding: 8px 18px 8px 8px; box-shadow: var(--shadow); font-weight: 500; font-size: .92rem;
+}
+.certs span {
+  background: var(--accent); color: #fff; border-radius: 999px; padding: 3px 12px;
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
 }
 
 /* Tags */

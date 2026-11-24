@@ -411,8 +411,8 @@
     ];
     const SKILLS = [
       ["Python", ["cs"]], ["JavaScript", ["cs"]], ["HTML / CSS", ["cs"]], ["SQL", ["cs"]], ["Git", ["cs"]],
-      ["Economic Analysis", ["econ"]], ["Excel", ["econ"]],
-      ["Graphic Design", ["design"]], ["Canva", ["design"]], ["Figma", ["design"]], ["User Research", ["design"]],
+      ["Economic Analysis", ["econ"]], ["Microsoft Excel", ["econ"]],
+      ["Graphic Design", ["design"]], ["Canva", ["design"]], ["Figma", ["design"]], ["Microsoft Word", ["design"]], ["User Research", ["design"]],
       ["Instagram Content", ["design"]], ["Copywriting", ["design"]], ["Event Promotion", ["design"]],
       ["Data Analysis", ["cs", "econ"]], ["Statistics", ["cs", "econ"]],
       ["UX Design", ["cs", "design"]], ["Usability Testing", ["cs", "design"]],
