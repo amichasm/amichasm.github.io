@@ -24,6 +24,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#coursework">Coursework</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#social">Social</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -141,7 +142,7 @@
       <h2 data-reveal="words">Skills across disciplines.</h2>
       <p class="section-intro" data-reveal="up">Hover over a skill to see which areas it belongs to, or drag the bubbles to explore. Skills between two areas draw on both.</p>
       <div class="skill-graph" id="skill-graph" data-reveal="up" role="img" aria-label="Interactive map of skills across computer science, economics, and design"></div>
-      <button type="button" class="certs" data-reveal="up" aria-haspopup="dialog" aria-controls="cert-dialog">
+      <button type="button" class="certs" data-reveal="up" data-dialog="cert-dialog" aria-haspopup="dialog" aria-controls="cert-dialog">
         <span class="cert-tag">Certification</span>
         <span class="cert-name">Microsoft Office Specialist: Word Associate (Microsoft 365 Apps) · 2024</span>
         <span class="cert-view">View certificate →</span>
@@ -153,11 +154,11 @@
       </dialog>
       <!-- Edit the skills list in script.js (search for "SKILLS") -->
       <ul class="sr-only">
-        <li>Computer Science: Python, JavaScript, HTML / CSS, SQL, Git</li>
+        <li>Computer Science: C, Python, JavaScript, HTML / CSS, SQL, Git, Algorithms, Discrete Math, Generative AI</li>
         <li>Economics: Economic Analysis, Microsoft Excel</li>
         <li>Design &amp; Communications: Graphic Design, Canva, Figma, Microsoft Word, User Research, Instagram Content, Copywriting, Event Promotion</li>
         <li>Computer Science and Economics: Data Analysis, Statistics</li>
-        <li>Computer Science and Design: UX Design, Usability Testing</li>
+        <li>Computer Science and Design: UX Design, Usability Testing, Data Visualization</li>
         <li>Economics and Design: Market Research, Marketing</li>
       </ul>
     </section>
@@ -166,13 +167,87 @@
     <div class="bridge visitor">
       <div class="bubble-wrap" data-reveal="pop">
         <span class="who">You</span>
-        <p class="bubble" data-type>Interesting. What have you built so far?</p>
+        <p class="bubble" data-type>Where did you learn all of this?</p>
       </div>
     </div>
 
-    <!-- ========== CHAPTER 3: PROJECTS ========== -->
+    <!-- ========== CHAPTER 3: COURSEWORK ========== -->
+    <section id="coursework" class="section">
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 03</span> Coursework</p>
+      <h2 data-reveal="words">Building the foundations.</h2>
+      <p class="section-intro" data-reveal="up">Computer science coursework at Harvard College, and what each course taught me.</p>
+      <!-- To add a course, copy one <article>. Include the "In progress" span for current courses. -->
+      <div class="courses-grid" data-stagger>
+        <article class="card course" data-reveal="pop">
+          <div class="course-meta">
+            <span class="course-code">CS 50</span>
+            
+          </div>
+          <span class="course-term">Freshman Fall · 2024</span>
+          <h3>Introduction to Computer Science</h3>
+          <p>A rigorous introduction to computer science and programming. Starting with my very first program, a game built in Scratch, I learned to solve problems in C, Python, SQL, and JavaScript, worked with algorithms, memory management, and data structures such as linked lists, hash tables, and tries, built web applications with Flask, and completed an independent final project.</p>
+          <ul class="tags small"><li>C</li><li>Python</li><li>SQL</li><li>HTML / CSS / JS</li><li>Flask</li><li>Data Structures</li></ul>
+          <a href="#first-program" class="project-link">See my first program →</a>
+        </article>
+
+        <article class="card course" data-reveal="pop">
+          <div class="course-meta">
+            <span class="course-code">CS 20</span>
+            
+          </div>
+          <span class="course-term">Freshman Spring · 2025</span>
+          <h3>Discrete Mathematics for Computer Science</h3>
+          <p>The mathematical foundations of computer science: logic, set theory, combinatorics, number theory, probability, and graph theory, with a focus on formal reasoning and writing rigorous proofs.</p>
+          <ul class="tags small"><li>Proofs</li><li>Logic</li><li>Combinatorics</li><li>Probability</li><li>Graph Theory</li></ul>
+        </article>
+
+        <article class="card course" data-reveal="pop">
+          <div class="course-meta">
+            <span class="course-code">CS 1200</span>
+            
+          </div>
+          <span class="course-term">Sophomore Fall · 2025</span>
+          <h3>Introduction to Algorithms and Their Limitations</h3>
+          <p>Designing algorithms with provable correctness and efficiency, including graph, randomized, and satisfiability (SAT) algorithms, and formalizing computational problems. I also studied the limits of computation through reductions, intractability, and uncomputability.</p>
+          <ul class="tags small"><li>Algorithm Design</li><li>Complexity</li><li>Graph Algorithms</li><li>Reductions</li></ul>
+        </article>
+
+        <article class="card course" data-reveal="pop">
+          <div class="course-meta">
+            <span class="course-code">CS 1066</span>
+            <span class="in-progress"><i></i>In progress</span>
+          </div>
+          <span class="course-term">Junior Fall · 2026</span>
+          <h3>Build at the Speed of Thought</h3>
+          <p>Building complex software tools in partnership with generative AI: directing AI coding assistants, verifying and testing their output, applying software engineering practices like testing and version control, and evaluating different AI models. Course project in progress.</p>
+          <ul class="tags small"><li>Generative AI</li><li>Software Engineering</li><li>Testing</li><li>Version Control</li></ul>
+        </article>
+
+        <article class="card course" data-reveal="pop">
+          <div class="course-meta">
+            <span class="course-code">CS 1710</span>
+            <span class="in-progress"><i></i>In progress</span>
+          </div>
+          <span class="course-term">Junior Fall · 2026</span>
+          <h3>Visualization</h3>
+          <p>Design principles and techniques for visualizing data, including visual perception, data and image models, and interaction design, along with programming interactive, web-based visualizations. Course project in progress.</p>
+          <ul class="tags small"><li>Data Visualization</li><li>Interaction Design</li><li>Visual Perception</li><li>Web Visualization</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Conversation: Amy -->
+    <div class="bridge amy">
+      <span class="avatar thread-anchor" aria-hidden="true"></span>
+      <div class="bubble-wrap" data-reveal="pop">
+        <span class="who">Amy</span>
+        <p class="bubble" data-type>And I've been putting it into practice. Here's what I've built so far.</p>
+      </div>
+    </div>
+
+    <!-- ========== CHAPTER 4: PROJECTS ========== -->
     <section id="projects" class="section">
-      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 03</span> Things I've made</p>
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 04</span> Things I've made</p>
       <h2 data-reveal="words">The work, so far.</h2>
       <div class="filters" role="group" aria-label="Filter projects" data-reveal="up">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -182,6 +257,21 @@
 
       <!-- To add a project, copy one <article>. data-category can be "cs", "design", or "cs design" for both -->
       <div class="projects-grid" data-stagger>
+        <article class="card project project-feature" id="first-program" data-category="cs" data-reveal="pop">
+          <button type="button" class="project-thumb" data-dialog="scratch-dialog" aria-label="Play my first program, a Scratch game">
+            <img src="images/scratch-pset0.png" alt="A Scratch game: a ninja on green hills, three hearts for lives, and instructions to catch the fruit" loading="lazy" />
+            <span class="play-badge">▶ Play</span>
+          </button>
+          <span class="badge badge-cs">Computer Science · CS 50</span>
+          <h3>Where It Started: My First Program</h3>
+          <p>My first CS 50 problem set: an arcade game built in Scratch. Players steer a ninja with the arrow keys to catch falling fruit, and three misses ends the game. It introduced me to loops, conditionals, variables, and event-driven programming. Today, I build interactive websites like this one.</p>
+          <ul class="tags small"><li>Scratch</li><li>Game Design</li><li>Event-Driven Programming</li></ul>
+          <div class="project-links">
+            <button type="button" class="project-link link-btn" data-dialog="scratch-dialog">Play the game →</button>
+            <a href="https://scratch.mit.edu/projects/1064717001/" target="_blank" rel="noopener" class="project-link">View on Scratch ↗</a>
+          </div>
+        </article>
+
         <article class="card project" data-category="cs design" data-reveal="pop">
           <span class="badge badge-cs">UX Design · Tech for Social Good</span>
           <h3>Stanford SMILE Learning Platform</h3>
@@ -205,20 +295,26 @@
           <a href="#social" class="project-link">See the posts ↓</a>
         </article>
       </div>
+      <dialog class="cert-dialog game-dialog" id="scratch-dialog" aria-label="My first program, a Scratch game">
+        <form method="dialog"><button class="cert-close" aria-label="Close game">×</button></form>
+        <div class="game-frame">
+          <iframe data-src="https://scratch.mit.edu/projects/1064717001/embed" title="Scratch game: catch the fruit" allowtransparency="true" allowfullscreen></iframe>
+        </div>
+        <p>Click the green flag, then use the arrow keys. Made in Scratch for CS 50 (2024).</p>
+      </dialog>
     </section>
 
-    <!-- Conversation: Amy -->
-    <div class="bridge amy">
-      <span class="avatar thread-anchor" aria-hidden="true"></span>
+    <!-- Conversation: visitor -->
+    <div class="bridge visitor">
       <div class="bubble-wrap" data-reveal="pop">
-        <span class="who">Amy</span>
-        <p class="bubble" data-type>Outside the classroom, I lead communications for the communities I'm part of.</p>
+        <span class="who">You</span>
+        <p class="bubble" data-type>What about outside the classroom?</p>
       </div>
     </div>
 
-    <!-- ========== CHAPTER 4: SOCIAL MEDIA ========== -->
+    <!-- ========== CHAPTER 5: SOCIAL MEDIA ========== -->
     <section id="social" class="section">
-      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 04</span> Telling our stories</p>
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 05</span> Telling our stories</p>
       <h2 data-reveal="words">Designing for my communities.</h2>
       <p class="section-intro" data-reveal="up">Graphics and Instagram content I designed as Communications Director for two Harvard College student organizations.</p>
 
@@ -310,17 +406,18 @@
       </div>
     </section>
 
-    <!-- Conversation: visitor -->
-    <div class="bridge visitor">
+    <!-- Conversation: Amy -->
+    <div class="bridge amy">
+      <span class="avatar thread-anchor" aria-hidden="true"></span>
       <div class="bubble-wrap" data-reveal="pop">
-        <span class="who">You</span>
-        <p class="bubble" data-type>Wow. How did you get here?</p>
+        <span class="who">Amy</span>
+        <p class="bubble" data-type>Here's the path that's brought me here.</p>
       </div>
     </div>
 
-    <!-- ========== CHAPTER 5: EXPERIENCE ========== -->
+    <!-- ========== CHAPTER 6: EXPERIENCE ========== -->
     <section id="experience" class="section">
-      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 05</span> The journey</p>
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 06</span> The journey</p>
       <h2 data-reveal="words">How I got here.</h2>
       <div class="timeline-wrap">
         <span class="timeline-progress" aria-hidden="true"></span>
@@ -364,18 +461,17 @@
       </div>
     </section>
 
-    <!-- Conversation: Amy -->
-    <div class="bridge amy">
-      <span class="avatar thread-anchor" aria-hidden="true"></span>
+    <!-- Conversation: visitor -->
+    <div class="bridge visitor">
       <div class="bubble-wrap" data-reveal="pop">
-        <span class="who">Amy</span>
-        <p class="bubble" data-type>Which brings us to now… and maybe to you. 💌</p>
+        <span class="who">You</span>
+        <p class="bubble" data-type>This is great. How can I get in touch?</p>
       </div>
     </div>
 
-    <!-- ========== CHAPTER 6: CONTACT ========== -->
+    <!-- ========== CHAPTER 7: CONTACT ========== -->
     <section id="contact" class="section contact">
-      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 06</span> Your turn</p>
+      <p class="chapter thread-anchor" data-reveal="fade"><span>Chapter 07</span> Your turn</p>
       <h2 data-reveal="words">Let's write the next chapter together.</h2>
       <p data-reveal="up">Open to opportunities and collaborations. The fastest way to reach me is email.</p>
       <div class="hero-actions" data-reveal="up">

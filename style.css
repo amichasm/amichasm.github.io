@@ -414,6 +414,60 @@ main {
 .project-link { color: var(--accent); font-weight: 600; font-size: .95rem; transition: letter-spacing .25s; }
 .project-link:hover { color: var(--accent-dark); letter-spacing: .02em; }
 
+/* Featured project: thumbnail that opens the playable game */
+.project-thumb {
+  position: relative; display: block; width: calc(100% + 56px); margin: -28px -28px 6px;
+  border: 0; padding: 0; cursor: pointer; overflow: hidden; border-radius: var(--radius) var(--radius) 0 0;
+  background: #9ff;
+}
+.project-thumb img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .5s var(--ease); }
+.project-thumb:hover img { transform: scale(1.04); }
+.play-badge {
+  position: absolute; left: 50%; top: 50%; translate: -50% -50%;
+  background: var(--accent); color: #fff; font-weight: 700; padding: 10px 20px; border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(201, 63, 116, .4); transition: scale .25s var(--ease-pop);
+}
+.project-thumb:hover .play-badge { scale: 1.08; }
+.project-links { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.link-btn { background: none; border: 0; padding: 0; cursor: pointer; font-family: inherit; }
+.course .project-link { margin-top: 4px; }
+
+.game-dialog { width: min(560px, 94vw); }
+.game-frame { position: relative; width: 100%; aspect-ratio: 485 / 402; border-radius: 12px; overflow: hidden; background: var(--bg-alt); }
+.game-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 720px) { .project-thumb { width: calc(100% + 44px); margin: -22px -22px 6px; } }
+.cert-close { z-index: 2; }
+@media (min-width: 900px) {
+  .project-feature {
+    grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    column-gap: 40px; row-gap: 12px; align-content: start;
+  }
+  .project-feature .project-thumb {
+    grid-row: 1 / span 5; width: calc(100% + 28px); height: calc(100% + 56px);
+    margin: -28px 0 -28px -28px; border-radius: var(--radius) 0 0 var(--radius);
+  }
+  .project-feature .project-thumb img { height: 100%; aspect-ratio: auto; }
+  .project-feature > :not(.project-thumb) { grid-column: 2; }
+  .project-feature h3 { font-family: var(--serif); font-weight: 400; font-size: 1.7rem; }
+}
+
+/* Coursework */
+.courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; perspective: 1000px; }
+.course { display: flex; flex-direction: column; gap: 10px; transform-style: preserve-3d; will-change: transform; }
+.course.in { transition: opacity .9s var(--ease), transform .2s ease-out, scale .7s var(--ease-pop), box-shadow .3s; }
+.course:hover { box-shadow: var(--shadow-hover); }
+.course-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.course-code { font-family: var(--serif); font-size: 1.9rem; line-height: 1; color: var(--accent); }
+.course-term { font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.course h3 { margin: 0; }
+.course p { color: var(--muted); flex: 1; }
+.in-progress {
+  display: inline-flex; align-items: center; gap: 7px; padding: 4px 11px; border-radius: 999px;
+  background: var(--purple-soft); color: #6d3a96; font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+}
+.in-progress i { width: 7px; height: 7px; border-radius: 50%; background: var(--purple); animation: pulse 1.8s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(138, 79, 184, .5); } 50% { box-shadow: 0 0 0 5px rgba(138, 79, 184, 0); } }
+
 /* Timeline */
 .timeline-wrap { position: relative; }
 .timeline { list-style: none; border-left: 1.5px solid var(--border); padding-left: 36px; margin-left: 6px; }

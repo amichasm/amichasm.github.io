@@ -410,12 +410,13 @@
       { id: "design", lines: ["Design &", "Comms"] },
     ];
     const SKILLS = [
-      ["Python", ["cs"]], ["JavaScript", ["cs"]], ["HTML / CSS", ["cs"]], ["SQL", ["cs"]], ["Git", ["cs"]],
+      ["C", ["cs"]], ["Python", ["cs"]], ["JavaScript", ["cs"]], ["HTML / CSS", ["cs"]], ["SQL", ["cs"]], ["Git", ["cs"]],
+      ["Algorithms", ["cs"]], ["Discrete Math", ["cs"]], ["Generative AI", ["cs"]],
       ["Economic Analysis", ["econ"]], ["Microsoft Excel", ["econ"]],
       ["Graphic Design", ["design"]], ["Canva", ["design"]], ["Figma", ["design"]], ["Microsoft Word", ["design"]], ["User Research", ["design"]],
       ["Instagram Content", ["design"]], ["Copywriting", ["design"]], ["Event Promotion", ["design"]],
       ["Data Analysis", ["cs", "econ"]], ["Statistics", ["cs", "econ"]],
-      ["UX Design", ["cs", "design"]], ["Usability Testing", ["cs", "design"]],
+      ["UX Design", ["cs", "design"]], ["Usability Testing", ["cs", "design"]], ["Data Visualization", ["cs", "design"]],
       ["Market Research", ["econ", "design"]], ["Marketing", ["econ", "design"]],
     ];
     const nodes = [
@@ -607,7 +608,7 @@
   filterButtons.forEach((btn) => btn.addEventListener("click", () => applyFilter(btn.dataset.filter)));
 
   if (!reduce && window.matchMedia("(hover: hover)").matches) {
-    projects.forEach((p) => {
+    [...projects, ...$$(".course")].forEach((p) => {
       p.addEventListener("pointermove", (e) => {
         const r = p.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
@@ -618,13 +619,21 @@
     });
   }
 
-  /* ---------- Certificate: open in a pop-up, click outside to close ---------- */
-  const certBtn = $(".certs");
-  const certDialog = $("#cert-dialog");
-  if (certBtn && certDialog && typeof certDialog.showModal === "function") {
-    certBtn.addEventListener("click", () => certDialog.showModal());
-    certDialog.addEventListener("click", (e) => { if (e.target === certDialog) certDialog.close(); });
-  }
+  /* ---------- Pop-ups (certificate, Scratch game): any [data-dialog] button opens one ---------- */
+  $$("[data-dialog]").forEach((btn) => {
+    const dlg = document.getElementById(btn.dataset.dialog);
+    if (!dlg || typeof dlg.showModal !== "function") return;
+    btn.addEventListener("click", () => {
+      // Embedded content (like the game) only loads when opened
+      $$("iframe[data-src]", dlg).forEach((f) => { if (!f.src) f.src = f.dataset.src; });
+      dlg.showModal();
+    });
+  });
+  $$("dialog").forEach((dlg) => {
+    dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+    // Unload embeds on close so a game doesn't keep playing in the background
+    dlg.addEventListener("close", () => $$("iframe[data-src]", dlg).forEach((f) => f.removeAttribute("src")));
+  });
 
   /* ---------- Contact: little hearts float up from "Email me" ---------- */
   const heartBtn = $(".heart-btn");
