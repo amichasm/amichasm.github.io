@@ -412,10 +412,10 @@
     const SKILLS = [
       ["Python", ["cs"]], ["JavaScript", ["cs"]], ["HTML / CSS", ["cs"]], ["SQL", ["cs"]], ["Git", ["cs"]],
       ["Economic Analysis", ["econ"]], ["Excel", ["econ"]],
-      ["Graphic Design", ["design"]], ["Canva", ["design"]], ["Figma", ["design"]],
+      ["Graphic Design", ["design"]], ["Canva", ["design"]], ["Figma", ["design"]], ["User Research", ["design"]],
       ["Instagram Content", ["design"]], ["Copywriting", ["design"]], ["Event Promotion", ["design"]],
       ["Data Analysis", ["cs", "econ"]], ["Statistics", ["cs", "econ"]],
-      ["Web Design", ["cs", "design"]],
+      ["UX Design", ["cs", "design"]], ["Usability Testing", ["cs", "design"]],
       ["Market Research", ["econ", "design"]], ["Marketing", ["econ", "design"]],
     ];
     const nodes = [
@@ -585,7 +585,7 @@
     filterButtons.forEach((b) => b.classList.toggle("active", b.dataset.filter === f));
     let shown = 0;
     projects.forEach((p) => {
-      const show = f === "all" || p.dataset.category === f;
+      const show = f === "all" || p.dataset.category.split(" ").includes(f);
       if (!hasD3 || reduce) { p.classList.toggle("hidden", !show); return; }
       const sel = d3.select(p).interrupt().style("transition", "transform .2s ease-out, box-shadow .3s");
       if (show) {
