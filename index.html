@@ -141,7 +141,16 @@
       <h2 data-reveal="words">Skills across disciplines.</h2>
       <p class="section-intro" data-reveal="up">Hover over a skill to see which areas it belongs to, or drag the bubbles to explore. Skills between two areas draw on both.</p>
       <div class="skill-graph" id="skill-graph" data-reveal="up" role="img" aria-label="Interactive map of skills across computer science, economics, and design"></div>
-      <p class="certs" data-reveal="up"><span>Certification</span> Microsoft Office Specialist: Word Associate (Word 2019)</p>
+      <button type="button" class="certs" data-reveal="up" aria-haspopup="dialog" aria-controls="cert-dialog">
+        <span class="cert-tag">Certification</span>
+        <span class="cert-name">Microsoft Office Specialist: Word Associate (Microsoft 365 Apps) · 2024</span>
+        <span class="cert-view">View certificate →</span>
+      </button>
+      <dialog class="cert-dialog" id="cert-dialog" aria-label="Microsoft Office Specialist certificate">
+        <form method="dialog"><button class="cert-close" aria-label="Close certificate">×</button></form>
+        <img src="images/mos-word-certificate.jpg" alt="Microsoft Office Specialist certificate: Word Associate, Microsoft 365 Apps, awarded to Amy Munoz on June 4, 2024" loading="lazy" />
+        <p>Verify at <a href="https://verify.certiport.com" target="_blank" rel="noopener">verify.certiport.com</a> with code <strong>5qmJ-4wvo</strong></p>
+      </dialog>
       <!-- Edit the skills list in script.js (search for "SKILLS") -->
       <ul class="sr-only">
         <li>Computer Science: Python, JavaScript, HTML / CSS, SQL, Git</li>

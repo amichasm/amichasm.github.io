@@ -351,14 +351,36 @@ main {
 }
 
 .certs {
-  margin-top: 20px; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px;
+  margin-top: 20px; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px 12px;
   background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
-  padding: 8px 18px 8px 8px; box-shadow: var(--shadow); font-weight: 500; font-size: .92rem;
+  padding: 8px 20px 8px 8px; box-shadow: var(--shadow); cursor: pointer; text-align: left;
+  color: var(--text); font-weight: 500; font-size: .92rem;
+  transition: opacity .9s var(--ease), transform .9s var(--ease), translate .25s var(--ease), box-shadow .25s, border-color .25s;
 }
-.certs span {
+.certs:hover, .certs:focus-visible { translate: 0 -2px; box-shadow: var(--shadow-hover); border-color: var(--accent); }
+.cert-tag {
   background: var(--accent); color: #fff; border-radius: 999px; padding: 3px 12px;
   font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
 }
+.cert-view { color: var(--accent); font-weight: 600; }
+
+.cert-dialog {
+  margin: auto; border: 0; border-radius: 22px; padding: 18px 18px 14px;
+  width: min(900px, 92vw); background: var(--surface); color: var(--text);
+  box-shadow: 0 30px 80px rgba(46, 26, 36, .35);
+}
+.cert-dialog[open] { animation: popIn .45s var(--ease-pop); }
+.cert-dialog::backdrop { background: rgba(46, 26, 36, .5); backdrop-filter: blur(4px); }
+.cert-dialog img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.cert-dialog p { margin-top: 12px; font-size: .88rem; color: var(--muted); text-align: center; }
+.cert-dialog a { color: var(--accent); font-weight: 600; }
+.cert-close {
+  position: absolute; top: 10px; right: 10px; width: 38px; height: 38px; border-radius: 50%;
+  border: 0; background: var(--surface); color: var(--text); font-size: 1.5rem; line-height: 1;
+  cursor: pointer; box-shadow: var(--shadow);
+}
+.cert-close:hover { background: var(--accent-soft); color: var(--accent); }
+@media (max-width: 720px) { .certs { border-radius: 18px; } }
 
 /* Tags */
 .tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }

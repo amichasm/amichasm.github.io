@@ -618,6 +618,14 @@
     });
   }
 
+  /* ---------- Certificate: open in a pop-up, click outside to close ---------- */
+  const certBtn = $(".certs");
+  const certDialog = $("#cert-dialog");
+  if (certBtn && certDialog && typeof certDialog.showModal === "function") {
+    certBtn.addEventListener("click", () => certDialog.showModal());
+    certDialog.addEventListener("click", (e) => { if (e.target === certDialog) certDialog.close(); });
+  }
+
   /* ---------- Contact: little hearts float up from "Email me" ---------- */
   const heartBtn = $(".heart-btn");
   if (heartBtn && hasD3 && !reduce) {
